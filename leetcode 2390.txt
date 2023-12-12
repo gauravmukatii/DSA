@@ -1,13 +1,18 @@
-https://leetcode.com/problems/removing-stars-from-a-string/description/
-
-
 class Solution {
     public String removeStars(String s) {
        //using StringBuilder
 
        StringBuilder sb = new StringBuilder();
 
-       for(int i = 0; )
+       for(int i = 0; i < s.length(); i++){
+           if(s.charAt(i) == '*'){
+               sb.deleteCharAt(sb.length() - 1);
+           }else{
+               sb.append(s.charAt(i));
+           }
+       }
+
+       return sb.toString();
 
 
         //using stack
