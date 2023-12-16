@@ -1,0 +1,39 @@
+https://medium.com/spring-boot/top-50-data-structures-and-algorithms-dsa-questions-for-interview-preparation-bf39bc848e80
+
+How would you determine if a binary tree is a binary search tree?
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+
+    public boolean isValidBSTImpl(TreeNode root, Integer min, Integer max){
+         if(root == null) return true;
+
+         if(root.val > min && root.val < max){
+             boolean left = isValidBSTImpl(root.left, min, root.val);
+             boolean right = isValidBSTImpl(root.right, root.val, max);
+             return left && right;
+         }
+         return false;
+    }
+
+    public boolean isValidBST(TreeNode root) {
+       int min = Integer.MIN_VALUE;
+       int max = Integer.MAX_VALUE;
+       return isValidBSTImpl(root, min, max);
+    }
+}
