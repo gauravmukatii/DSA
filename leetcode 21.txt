@@ -1,0 +1,33 @@
+21. Merge Two Sorted Lists
+
+class Solution {
+    public ListNode mergeTwoLists(ListNode List1, ListNode List2) {
+        if(List1 == null) return List2;
+        if(List2 == null) return List1;
+
+        ListNode newList = null;
+        ListNode head = newList;
+
+        while(List1 != null && List2 != null){
+            if(List1.val <= List2.val){
+                  head.next = new ListNode(List1.val);
+                  List1 = List1.next;
+            }else{
+                  head.next = new ListNode(List2.val);
+                  List2 = List2.next;
+            }
+            head = head.next;
+        }
+
+        if(List1 != null){
+            head.next = List1;
+        }
+
+        if(List2 != null){
+            head.next = List2;
+        }
+
+        return newList.next;
+
+    }
+}
