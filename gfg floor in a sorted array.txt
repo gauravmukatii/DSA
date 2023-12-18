@@ -1,0 +1,61 @@
+Floor(smaller than target) in a Sorted Array
+
+class Solution{
+    
+    // Function to find floor of x
+    // arr: input array
+    // n is the size of array
+    static int findFloor(long arr[], int n, long x)
+    {
+        int left = 0;
+        int right = n-1;
+
+        while(left <= right){
+            int mid = left + (right - left)/2;
+
+            if(arr[mid] == x){
+                return mid;
+            }
+            if(arr[mid] < x){
+                left = mid + 1;
+            }else if(arr[mid] > x){
+                right = mid-1;
+            }
+        }
+        
+        return start;
+    }
+    
+}
+
+
+
+Ceil(larger or eq than target) in a Sorted Array
+
+class Solution{
+    
+    // Function to find floor of x
+    // arr: input array
+    // n is the size of array
+    static int findFloor(long arr[], int n, long x)
+    {
+        int left = 0;
+        int right = n-1;
+
+        while(left <= right){
+            int mid = left + (right - left)/2;
+
+            if(arr[mid] == x){
+                return mid;
+            }
+            if(arr[mid] < x){
+                left = mid + 1;
+            }else if(arr[mid] > x){
+                right = mid-1;
+            }
+        }
+        
+        return end;
+    }
+    
+}
