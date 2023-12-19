@@ -1,0 +1,36 @@
+1342. Number of Steps to Reduce a Number to Zero
+
+class Solution {
+    public int numberOfSteps(int num) {
+
+        //recursin
+        return countSteps(num);
+
+
+        //Iteration
+        
+        // int count = 0;
+        // while(num != 0){
+        //     if(num % 2 == 0){
+        //         count++;
+        //         num /= 2;
+        //     }else{
+        //         count++;
+        //         num -= 1;
+        //     }
+        // }
+        // return count;
+    }
+
+    public static int countSteps(int num){
+        if(num == 0){
+            return 0;
+        }
+
+        if(num%2 == 0){
+            return 1 + countSteps(num/2);
+        }else{
+            return 1 + countSteps(num-1);
+        }
+    } 
+}
