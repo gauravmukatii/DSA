@@ -10,7 +10,6 @@ public class TrianglePattern {
         }
 
         if (c < r) {
-
             triangle2(r, c + 1);
             System.out.print("* ");
         } else {
