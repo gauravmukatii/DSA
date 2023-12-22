@@ -1,0 +1,26 @@
+98. Validate Binary Search Tree
+
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+           return helper(root, null, null);
+    }
+
+    public boolean helper(TreeNode root, Integer min, Integer max){
+         if(root == null){
+             return true;
+         }
+
+         if(min!=null && root.val <= min){
+             return false;
+         }
+
+         if(max!=null && root.val >= max){
+             return false;
+         }
+
+         boolean leftTree = helper(root.left, min, root.val);
+         boolean rightTree = helper(root.right, root.val, max);
+
+         return leftTree && rightTree;
+    }
+}
