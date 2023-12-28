@@ -1,0 +1,28 @@
+39. Combination Sum
+
+
+//using recursion
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        helper(0, candidates, target, res, new ArrayList<>());
+        return res;
+    }
+
+    public static void helper(int index, int[] candidates, int target, List<List<Integer>> res, List<Integer> curList){
+         if(index == candidates.length){
+             if(target == 0){
+                 res.add(new ArrayList<>(curList));
+             }
+             return;
+         }
+
+         if(candidates[index] <= target){
+             curList.add(candidates[index]);
+             helper(index, candidates, target-candidates[index], res, curList);
+             curList.remove(curList.size()-1);
+         }
+         helper(index+1, candidates, target, res, curList);
+       
+    }
+}
