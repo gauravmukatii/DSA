@@ -1,0 +1,16 @@
+1816. Truncate Sentence
+
+class Solution {
+    public String truncateSentence(String s, int k) {
+        String[] sArray = s.split(" ");
+        StringBuilder res = new StringBuilder();
+        for(int i = 0 ; i < sArray.length; i++){
+            if(k != 0){
+                res.append(sArray[i]).append(" ");
+                k--;
+            }
+        }
+        return res.toString().trim();
+
+    }
+}
