@@ -1,0 +1,19 @@
+2194. Cells in a Range on an Excel Sheet
+
+class Solution {
+    public List<String> cellsInRange(String s) {
+        char firstCol = s.charAt(0);
+        char lastCol = s.charAt(3);
+        char firstRow = s.charAt(1);
+        char lastRow = s.charAt(4);
+
+        List<String> cells = new ArrayList<>();
+
+        for (char c = firstCol; c <= lastCol; ++c) {
+            for (char r = firstRow; r <= lastRow; ++r) {
+                cells.add("" + c + r);
+            }
+        }
+        return cells;
+    }
+}
