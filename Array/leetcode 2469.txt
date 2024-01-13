@@ -1,0 +1,19 @@
+2469. Convert the Temperature
+
+class Solution {
+    public double[] convertTemperature(double celsius) {
+        double[] res = new double[2];
+
+        double kelvin = celsius + 273.15;
+        double fahrenheit = celsius * 1.80 + 32.00;
+
+        DecimalFormat decimalFormat = new DecimalFormat("#.#####");
+        String k = decimalFormat.format(kelvin);
+        String f = decimalFormat.format(fahrenheit);
+
+        res[0] = Double.parseDouble(k);
+        res[1] = Double.parseDouble(f);
+
+        return res;
+    }
+}
