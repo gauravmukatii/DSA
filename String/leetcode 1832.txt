@@ -1,0 +1,21 @@
+1832. Check if the Sentence Is Pangram
+
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        if(sentence.length() < 26){
+            return false;
+        }
+        char[] words = sentence.toCharArray();
+        Set<Character> set = new HashSet<>();
+
+        for(char word : words){
+             set.add(word);
+        }
+
+        if(set.size() == 26){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
